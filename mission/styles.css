@@ -1,0 +1,62 @@
+body
+{
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+    max-width: 900px;
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#content
+{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 600px;
+    align-content: center;
+    text-align: center;
+    align-self: center;
+    margin: auto;
+    line-height: 1.5em;
+    
+
+    
+}
+
+#title
+{
+    font-size: 1.9em;
+    letter-spacing: 4px;
+    margin-top: 90px;
+}
+
+#subtitle
+{
+    font-size: .75em;
+    color: #006EB6;
+    letter-spacing: 4px;
+}
+
+#title, #subtitle
+{
+    text-transform: uppercase;
+}
+
+main
+{
+    text-align: left;
+    font-weight: 400px;
+    margin-top: 50px
+}
+
+li
+{
+    margin-bottom: 20px;
+}
+
+img
+{
+    margin:45px;
+    max-width: 150px;
+}
