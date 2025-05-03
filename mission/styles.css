@@ -9,6 +9,13 @@ body
     margin-bottom: 50px;
 }
 
+.dark
+{
+    background-color: #333;
+    color: white;
+
+}
+
 #content
 {
     font-size: 20px;
@@ -37,6 +44,11 @@ body
     letter-spacing: 4px;
 }
 
+.dark #subtitle
+{
+    color: #A0D4ED;
+}
+
 #title, #subtitle
 {
     text-transform: uppercase;
@@ -59,3 +71,11 @@ img
     margin:45px;
     max-width: 150px;
 }
+
+#subtitle .dark
+{
+    color: #A0D4ED;
+}
+
+
+
