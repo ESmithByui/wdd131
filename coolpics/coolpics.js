@@ -3,7 +3,7 @@ const menu = document.querySelector("nav");
 const gallery = document.querySelector(".gallery");
 
 const modal = document.createElement("dialog");
-modal.innerHTML = `<img><button class="close_viewer>X</button>`;
+modal.innerHTML = `<img><button class="close_viewer">X</button>`;
 document.body.append(modal);
 const modalImage = document.querySelector("dialog img");
 const close_button = document.querySelector(".close_viewer")
@@ -43,7 +43,7 @@ handleResize();
 menu_button.addEventListener("click", hideMenu);
 window.addEventListener("resize", handleResize);
 gallery.addEventListener("click", openModal)
-clost_button.addEventListener("click", (event) => {
+close_button.addEventListener("click", (event) => {
     modal.close();
 })
 modal.addEventListener("click", (event) => {
