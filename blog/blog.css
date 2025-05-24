@@ -11,6 +11,19 @@ body {
     margin: 0 auto;
 }
 
+.skip_to_content a {
+    background-color: #AF1B3F;
+    position: absolute;
+    text-decoration: none;
+    text-decoration: none;
+    color: var(--gold-color);
+    top: -40px;
+}
+
+.skip_to_content a:focus {
+    top: 0;
+}
+
 h1 {
     padding: 25px;
     text-align: center;
