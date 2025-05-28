@@ -70,9 +70,14 @@ main {
     text-align: right;
 }
 
+.search_info > * {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
 .date {
     font-size: 1.1em;
-    margin-top: 10px;
+    margin-top: 6px;
 }
 
 .book_info {
