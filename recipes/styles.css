@@ -172,7 +172,7 @@ footer a:visited{
         text-align: left;
     }
     .social {
-        width: 60%;
+        width: 220px;
         justify-content: flex-end;
     }
 }
