@@ -12,6 +12,10 @@ img {
     max-width: 100%;
 }
 
+body {
+    margin: 0;
+}
+
 #content {
     font-family: var(--primary-font);
     color: var(--text-dark);
@@ -29,6 +33,7 @@ header {
 
 #logo {
     width:80px;
+    height:80px;
 }
 
 #title {
@@ -56,6 +61,7 @@ header {
 
 .search_button {
     width: 30px;
+    height: 30px;
     padding: 5px;
     display: block;
     border-left: var(--text-dark) solid 2px;
@@ -119,13 +125,13 @@ footer {
 
 footer > a{
     text-decoration: none;
-    color: var(--primary-color);
-    font-size: .9em;
+    color: var(--text-dark);
+    font-weight: bold;
 }
 
 footer a:visited{
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--text-dark);
 }
 
 .social {
@@ -138,6 +144,7 @@ footer a:visited{
 
 .social img {
     width: 60px;
+    height: 60px;
 }
 
 @media screen and (min-width: 600px) {
