@@ -279,3 +279,97 @@ const recipes = [
 		rating: 4
 	}
 ]
+
+function recipe_template(recipe) {
+
+	function tags_to_html(tags) {
+		return tags.map((tag) => `<p class="tag">${tag}</p>`).join('');
+	}
+
+	function stars(rating) {
+		let results = ``
+		for(let i=1; i<=5 ;i++)
+		{
+			if(rating > i) {
+				results += `<span aria-hidden="true" class="icon-star">⭐</span>`
+			}
+			else {
+				results += `<span aria-hidden="true" class="icon-star-empty">☆</span>`
+			}
+		}
+		return results;
+	}
+
+	new_HTML =`<section class="recipe">
+                <img class="recipe_img" src="${recipe.image}" alt="${recipe.name}">
+                <div class="recipe_info">
+                    <div class="recipe_tags">
+                        ${tags_to_html(recipe.tags)}
+                	</div>
+                	<h2 class="recipe_title">${recipe.name}</h2>
+                	<span
+                        class="rating"
+                        role="img"
+                        aria-label="Rating: ${recipe.rating} out of 5 stars"
+                    >
+                        ${stars(recipe.rating)}
+                    </span>
+                    <p class="recipe_description">${recipe.description}</p>
+                </div>
+            </section>`
+
+	return new_HTML;
+}
+
+function get_random_list_entry(list)
+{
+	return list[Math.floor(Math.random() * list.length)]
+}
+
+function render_recipes(recipe_list) {
+	let gallery = document.querySelector(".gallery")
+	gallery.innerHTML = recipe_list.map((recipe) => recipe_template(recipe)).join('');
+}
+
+function filter_recipes(query) {
+	function filter_callback(item) {
+		return (
+			item.name.toLowerCase().includes(query.toLowerCase()) ||
+			item.description.toLowerCase().includes(query.toLowerCase()) ||
+			item.tags.find((tag) => tag.toLowerCase().includes(query.toLowerCase()))
+		);
+	}
+	function compareFn(a,b) {
+		if (a.name < b.name) {
+			return -1;
+		} else if (a.name > b.name) {
+			return 1;
+		}
+ 		return 0;
+}
+	return recipes.filter(filter_callback).sort(compareFn);
+}
+
+
+
+const search_bar = document.querySelector(".search_bar input");
+
+
+const search_button = document.querySelector(".search_button");
+
+function search_handler() {
+	event.preventDefault()
+	render_recipes(filter_recipes(search_bar.value))
+}
+
+search_button.addEventListener('click', search_handler);
+document.querySelector(".search_bar").addEventListener('submit', search_handler);
+
+
+function init() {
+	const recipe = get_random_list_entry(recipes)
+	render_recipes([recipe]);
+}
+
+init();
+
